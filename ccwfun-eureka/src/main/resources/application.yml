@@ -1,0 +1,14 @@
+server:
+  port: 10086 #端口号
+spring:
+  application:
+    name: eureka #服务名
+eureka:
+  client:
+    fetch-registry: false #是否将该服务向注册中心进行注册（这里没必须自己注册自己）
+    register-with-eureka: false #是否检索服务（作为注册服务，没有调用其他微服务的必要，所以不检索服务）
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 每隔5秒进行一次服务列表清理
