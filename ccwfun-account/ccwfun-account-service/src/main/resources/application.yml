@@ -4,7 +4,7 @@ spring:
   application:
     name: account-service
   datasource:
-    url: jdbc:mysql://localhost:3306/sbjm
+    url: jdbc:mysql://localhost:3306/ccwfun-account
     username: root
     password: ccw123
     hikari:
