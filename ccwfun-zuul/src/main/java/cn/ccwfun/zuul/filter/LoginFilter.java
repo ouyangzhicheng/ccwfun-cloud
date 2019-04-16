@@ -2,8 +2,7 @@ package cn.ccwfun.zuul.filter;
 
 import cn.ccwfun.common.enums.ExceptionEnum;
 import cn.ccwfun.common.utils.JsonUtils;
-import cn.ccwfun.common.vo.ExceptionResult;
-import cn.ccwfun.zuul.utils.CusAddressUtil;
+import cn.ccwfun.common.vomain.ExceptionResultVO;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
 import com.netflix.zuul.context.RequestContext;
@@ -12,9 +11,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
+
 
 /**
  *
@@ -57,12 +55,12 @@ public class LoginFilter extends ZuulFilter{
             //未登录，拦截
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(HttpStatus.FORBIDDEN.value());
-            ctx.setResponseBody(JsonUtils.serialize(new ExceptionResult(ExceptionEnum.ACCESS_TOKEN_CANNOT_BE_NULL)));
+            ctx.setResponseBody(JsonUtils.serialize(new ExceptionResultVO(ExceptionEnum.ACCESS_TOKEN_CANNOT_BE_NULL)));
         }else {
             //校验对错
             if(!accessToken.equals(redis_accessToken)){
                 ctx.setResponseStatusCode(HttpStatus.FORBIDDEN.value());
-                ctx.setResponseBody(JsonUtils.serialize(new ExceptionResult(ExceptionEnum.ACCESS_TOKEN_ERROR)));
+                ctx.setResponseBody(JsonUtils.serialize(new ExceptionResultVO(ExceptionEnum.ACCESS_TOKEN_ERROR)));
             }
 //            //获取Ip
 //            String requestIpAddress= CusAddressUtil.getIpAddress(request);

@@ -13,6 +13,7 @@
     </modules>
     <packaging>pom</packaging>
 
+
     <!-- 作为springBoot web工程，所以继承springBoot的父包,来获得一些合理的默认配置-->
     <parent>
         <groupId>org.springframework.boot</groupId>

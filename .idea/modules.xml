@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-account/ccwfun-account.iml" filepath="$PROJECT_DIR$/ccwfun-account/ccwfun-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-account/ccwfun-account-interface/ccwfun-account-interface.iml" filepath="$PROJECT_DIR$/ccwfun-account/ccwfun-account-interface/ccwfun-account-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-account/ccwfun-account-service/ccwfun-account-service.iml" filepath="$PROJECT_DIR$/ccwfun-account/ccwfun-account-service/ccwfun-account-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ccwfun-cloud.iml" filepath="$PROJECT_DIR$/.idea/ccwfun-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-common/ccwfun-common.iml" filepath="$PROJECT_DIR$/ccwfun-common/ccwfun-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-email/ccwfun-email.iml" filepath="$PROJECT_DIR$/ccwfun-email/ccwfun-email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-eureka/ccwfun-eureka.iml" filepath="$PROJECT_DIR$/ccwfun-eureka/ccwfun-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ccwfun-zuul/ccwfun-zuul.iml" filepath="$PROJECT_DIR$/ccwfun-zuul/ccwfun-zuul.iml" />
+    </modules>
+  </component>
+</project>

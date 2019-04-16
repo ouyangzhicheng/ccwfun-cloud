@@ -1,0 +1,64 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: email-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/ccwfun-account
+    username: root
+    password: ccw123
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+#    cache:
+#      channel:
+#        checkout-timeout: 10000
+#    connection-timeout: 10000
+  redis:
+    host: 127.0.0.1
+  mail:
+#    host: smtp.163.com
+#    port: 465
+#    username: ccwfun@163.com
+#    password: ccwfun321
+    host: smtp.qq.com
+    port: 465
+    username: 296729445@qq.com
+    password: yskjfpfknfzybhhf
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl :
+            enable: true
+          starttls:
+            enable: true
+            required: true
+
+
+  thymeleaf:
+    prefix: classpath:/emailTemplate/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

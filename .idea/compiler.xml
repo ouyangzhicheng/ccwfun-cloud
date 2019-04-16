@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ccwfun-account-interface" />
+        <module name="ccwfun-account-service" />
+        <module name="ccwfun-common" />
+        <module name="ccwfun-email" />
+        <module name="ccwfun-eureka" />
+        <module name="ccwfun-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ccwfun-account" target="1.8" />
+      <module name="ccwfun-account-interface" target="1.8" />
+      <module name="ccwfun-account-service" target="1.8" />
+      <module name="ccwfun-common" target="1.8" />
+      <module name="ccwfun-email" target="1.8" />
+      <module name="ccwfun-eureka" target="1.8" />
+      <module name="ccwfun-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
