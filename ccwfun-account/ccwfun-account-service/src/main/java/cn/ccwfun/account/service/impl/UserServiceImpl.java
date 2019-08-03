@@ -69,14 +69,14 @@ public class UserServiceImpl implements UserService{
 
     /**
      *
-     * @param sourceAccount
+     * @param sourceAccount 用户
      */
     @Override
     public void sendVerifyCode(String sourceAccount) {
 
-        //生成验证码
+        //生成验证码1
         String verifyCode= NumberUtils.generateCode(6);
-        //发送验证码
+        //发送验证码1
         Map<String,String> msg=new HashMap<>();
         msg.put("sourceAccount",sourceAccount);
         msg.put("verifyCode",verifyCode);
