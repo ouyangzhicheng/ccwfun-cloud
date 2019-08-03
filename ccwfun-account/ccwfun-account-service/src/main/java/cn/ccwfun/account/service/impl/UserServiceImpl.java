@@ -11,6 +11,7 @@ import cn.ccwfun.account.utils.CodecUtils;
 import cn.ccwfun.common.enums.ExceptionEnum;
 import cn.ccwfun.common.exception.CfRuntimeException;
 import cn.ccwfun.common.utils.NumberUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
@@ -24,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -130,9 +131,10 @@ public class UserServiceImpl implements UserService{
         if (userRegisterDO==null){
             throw new CfRuntimeException(ExceptionEnum.USER_ACCOUNTID_PASSWORD_ERROR);
         }
+
         //对比密码是否正确
-        String encryptPassword=CodecUtils.md5Hex(userRegisterDO.getPassword(),userRegisterDO.getSalt());
-        if (!StringUtils.equals(encryptPassword,userLoginRequestVO.getPassword())) {
+        String encryptPassword=CodecUtils.md5Hex(userLoginRequestVO.getPassword(),userRegisterDO.getSalt());
+        if (!StringUtils.equals(encryptPassword,userRegisterDO.getPassword())) {
             throw new CfRuntimeException(ExceptionEnum.USER_ACCOUNTID_PASSWORD_ERROR);
         }
         //获取账号权限
