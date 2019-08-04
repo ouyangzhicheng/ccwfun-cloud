@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/ccwfun-account
     username: root
-    password: ccw123
+    password: admin
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10

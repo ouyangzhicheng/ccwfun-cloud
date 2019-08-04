@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService{
 
         //生成验证码1
         String verifyCode= NumberUtils.generateCode(6);
-        //发送验证码1
+        //发送验证码12
         Map<String,String> msg=new HashMap<>();
         msg.put("sourceAccount",sourceAccount);
         msg.put("verifyCode",verifyCode);
